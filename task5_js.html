@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container input[type="text"],
+        .container textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #msg, #msg2, #msg3, #msg4, #msg5, #msg6, #msg7, #msg8, #msg9 {
+            color: red;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        button[type="submit"] {
+            display: block;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="name">Name:</label>
+        <input type="text" id="i1" name="name" onkeyup="checkname()">
+        <span id="msg">This field is required</span>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="i2" name="email" onkeyup="checkmail()">
+        <span id="msg2">A valid email address is required</span>
+        <br>
+        <label for="website">Website:</label>
+        <input type="text" id="i3" name="website" onkeyup="checkweb()">
+        <span id="msg3">A valid URL is required</span>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="i4" rows="10" cols="20" onkeyup="checkmsg()"></textarea>
+        <span id="msg4">This field is required</span>
+        <br>
+        <button type="submit" onclick="validateForm()">Submit</button>
+    </div>
+
+    <script>
+        function checkname() {
+            var name = document.getElementById("i1").value;
+            var msg = document.getElementById("msg");
+            if (name.trim() === "") {
+                msg.textContent = "Name is required";
+                document.getElementById("i1").classList.add("error");
+            } else {
+                msg.textContent = "";
+                document.getElementById("i1").classList.remove("error");
+            }
+        }
+
+        function checkmail() {
+            var email = document.getElementById("i2").value;
+            var msg = document.getElementById("msg2");
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email.match(emailPattern)) {
+                msg.textContent = "A valid email address is required";
+                document.getElementById("i2").classList.add("error");
+            } else {
+                msg.textContent = "";
+                document.getElementById("i2").classList.remove("error");
+            }
+        }
+
+        function checkweb() {
+            var website = document.getElementById("i3").value;
+            var msg = document.getElementById("msg3");
+            var websitePattern = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-zA-Z0-9]+\.[a-zA-Z]{2,5}(\/)?$/
+            if (!website.match(websitePattern)) {
+                msg.textContent = "A valid URL is required";
+                document.getElementById("i3").classList.add("error");
+            } else {
+                msg.textContent = "";
+                document.getElementById("i3").classList.remove("error");
+            }
+        }
+
+        function checkmsg() {
+            var message = document.getElementById("i4").value;
+            var msg = document.getElementById("msg4");
+            if (message.trim() === "") {
+                msg.textContent = "Message is required";
+                document.getElementById("i4").classList.add("error");
+            } else {
+                msg.textContent = "";
+                document.getElementById("i4").classList.remove("error");
+            }
+        }
+
+        function validateForm() {
+            checkname();
+            checkmail();
+            checkweb();
+            checkmsg();
+        }
+    </script>
+</body>
+</html>

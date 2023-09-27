@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS for label and icon color -->
+    <style>
+        /* Center the content on the screen */
+        .center-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 100% of viewport height */
+        }
+
+        /* Style for the red label */
+        .red-label {
+            color: rgb(179, 16, 16);
+        }
+        .msg{
+          color:rgb(179, 16, 16);
+        }
+        #container{
+          background-color: rgb(210, 204, 204);
+        }
+    </style>
+</head>
+<body>
+    <div class="center-screen" >
+        <form id="container">
+            <div class="form-group has-error has-feedback">
+                <label for="inputError2" class="red-label">First Name</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-user"></span> 
+                  </span>
+                  </div>
+                    <input type="text" class="form-control" id="inputError2">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                <span class="msg">please supply your first name</span>
+            </div>
+
+            <div class="form-group has-error has-feedback">
+                <label for="inputError3" class="red-label">Last Name</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-user"></span> 
+                  </span>
+                  </div>
+                    <input type="text" class="form-control" id="inputError3">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                <span class="msg">please supply your last name</span>
+            </div>
+            
+            <!-- Email -->
+            <div class="form-group has-error has-feedback">
+                <label for="inputEmail" class="red-label">Email</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-envelope"></span> 
+                    </span>
+                    </div>
+                    <input type="email" class="form-control" id="inputEmail">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                <span class="msg">please supply your email address</span>
+            </div>
+            
+            <!-- Phone -->
+            <div class="form-group has-error has-feedback">
+                <label for="inputPhone" class="red-label">Phone</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-phone"></span> 
+                  </span>
+                  </div>
+                    <input type="tel" class="form-control" id="inputPhone">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                <span class="msg">please supply your phone number</span>
+            </div>
+            
+            <!-- Address -->
+            <div class="form-group has-error has-feedback">
+              <label for="inputCity" class="red-label">Address</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-home"></span> 
+                </span>
+                </div>
+                  <input type="text" class="form-control" id="inputCity">
+                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+              </div>
+              <span class="msg">please supply your street address</span>
+          </div>
+            
+            <!-- City -->
+            <div class="form-group has-error has-feedback">
+                <label for="inputCity" class="red-label">City</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-home"></span> 
+                  </span>
+                  </div>
+                    <input type="text" class="form-control" id="inputCity">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                <span class="msg">please supply your city</span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
